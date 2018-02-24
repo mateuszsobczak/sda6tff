@@ -1,3 +1,6 @@
+package com.sda;
+
+import com.sda.Writer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +15,7 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithGivenNameTest() {
-        //Writer writer = new Writer();
+        //com.sda.Writer writer = new com.sda.Writer();
         String name = "Szymon";
         String result = writer.sayHello(name);
 
@@ -21,7 +24,7 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithNoNameSpecified() {
-        //Writer writer = new Writer();
+        //com.sda.Writer writer = new com.sda.Writer();
         String name = "";
         String result = writer.sayHello("");
 
@@ -31,7 +34,7 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithNullName() {
-        //Writer writer = new Writer();
+        //com.sda.Writer writer = new com.sda.Writer();
         String name = null;
 
         String result = writer.sayHello(name);
@@ -40,7 +43,7 @@ public class WriterTest {
 
     @Test
     public void sayHelloWithUpperCasedName() {
-        //Writer writer = new Writer();
+        //com.sda.Writer writer = new com.sda.Writer();
         String name = "SZYMON";
 
         String result = writer.sayHello(name);
