@@ -9,10 +9,10 @@ public class Writer {
 
         String greeting = "Hello, ";
         //String output = greeting + nameSection + "!";
-        if (StringUtils.isAllUpperCase(nameSection)) {
+        /*if (StringUtils.isAllUpperCase(nameSection)) {
             greeting = StringUtils.upperCase(greeting);
 
-        }
+        }*/
         if (/*nameSection == null || "".equals(nameSection)|| */StringUtils.isBlank(nameSection)) { //nameSection.equals("") w tym przypadku nullPointerExeption moze poleciec
             nameSection = "my friend";
         }

@@ -4,10 +4,12 @@ import org.junit.Test;
 
 public class WriterTest {
     private Writer writer;
+
     @Before
-    public void init(){
+    public void init() {
         writer = new Writer();
     }
+
     @Test
     public void sayHelloWithGivenNameTest() {
         //Writer writer = new Writer();
@@ -35,37 +37,42 @@ public class WriterTest {
         String result = writer.sayHello(name);
         Assert.assertEquals("Hello, my friend!", result);
     }
+
     @Test
-    public void sayHelloWithUpperCasedName(){
+    public void sayHelloWithUpperCasedName() {
         //Writer writer = new Writer();
         String name = "SZYMON";
 
         String result = writer.sayHello(name);
         Assert.assertEquals("HELLO, SZYMON!", result);
     }
+
     @Test
-    public void sayHelloWithOneWhiteSpace(){
+    public void sayHelloWithOneWhiteSpace() {
         String name = " ";
 
         String result = writer.sayHello(name);
         Assert.assertEquals("Hello, my friend!", result);
     }
+
     @Test
-    public void sayHelloWithMultipleWhiteSpaces(){
+    public void sayHelloWithMultipleWhiteSpaces() {
         String name = "  ";
 
         String result = writer.sayHello(name);
         Assert.assertEquals("Hello, my friend!", result);
     }
+
     @Test
-    public void sayHelloWithMultipleNames(){
+    public void sayHelloWithMultipleNames() {
         String name = "Szymon,Jan,Anna";
 
         String result = writer.sayHello(name);
         Assert.assertEquals("Hello, Szymon, Jan and Anna!", result);
     }
+
     @Test
-    public void sayHelloWithMultipleCapitalizedNames(){
+    public void sayHelloWithMultipleCapitalizedNames() {
         String name = "SZYMON,JAN,ANNA";
 
         String result = writer.sayHello(name);
