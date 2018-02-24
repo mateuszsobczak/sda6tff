@@ -17,9 +17,14 @@ Feature: com.sda.CalcService
         When I execute calculate method
         Then I get 0 as a result
 
-    Scenario: Should Add Digits In String And Produce Result
+    Scenario: Should return correct value when mixed with letters is passed
         Given I initialize com.sda.CalcService
-        And  I pass text value to compute
+        And  I pass text value with letters
         When I execute calculate method
-        Then I get correct result
+        Then I get result for text with letters
 
+    Scenario: Should return correct value when recipe list is passed
+        Given I initialize com.sda.CalcService
+        And  I pass recipe
+        When I execute calculate method
+        Then I get result for recipe
