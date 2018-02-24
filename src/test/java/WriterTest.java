@@ -43,4 +43,18 @@ public class WriterTest {
         String result = writer.sayHello(name);
         Assert.assertEquals("HELLO, SZYMON!", result);
     }
+    @Test
+    public void sayHelloWithOneWhiteSpace(){
+        String name = " ";
+
+        String result = writer.sayHello(name);
+        Assert.assertEquals("Hello, my friend!", result);
+    }
+    @Test
+    public void sayHelloWithMultipleWhiteSpaces(){
+        String name = "  ";
+
+        String result = writer.sayHello(name);
+        Assert.assertEquals("Hello, my friend!", result);
+    }
 }

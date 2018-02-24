@@ -8,8 +8,9 @@ public class Writer {
         //String output = greeting + nameInMessage + "!";
         if (StringUtils.isAllUpperCase(nameInMessage)) {
             greeting = StringUtils.upperCase(greeting);
+
         }
-        if (nameInMessage == null || "".equals(nameInMessage)) { //nameInMessage.equals("") w tym przypadku nullPointerExeption moze poleciec
+        if (/*nameInMessage == null || "".equals(nameInMessage)|| */StringUtils.isBlank(nameInMessage)) { //nameInMessage.equals("") w tym przypadku nullPointerExeption moze poleciec
             nameInMessage = "my friend";
         }
 
