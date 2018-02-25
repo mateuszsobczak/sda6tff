@@ -4,36 +4,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
-    private static int idCounter = 0;
     private String name;
-    private List<User> users;
-    private List<Account> accounts;
+    private UserService userService;
+    private AccountService accountService;
 
     public Bank(String name) {
         this.name = name;
-        this.users = new ArrayList<>();
-        this.accounts = new ArrayList<>();
+        this.userService = new UserService();
+        this.accountService = new AccountService();
     }
 
     public String getName() {
         return name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public UserService getUserService() {
+        return userService;
     }
 
-    public List<Account> getAccounts() {
-        return accounts;
+    public boolean addUser(User user) {
+        return userService.addUser(user);
     }
 
-    public boolean addUser(User user){
+    public int getNumberOfUsers() {
+        return userService.getNumberOfUsers();
+    }
+
+    public boolean createAccount(int userId, Account account) {
         boolean result = false;
-        if(user != null){
-            user.setId(idCounter++);
-            users.add(user);
+        if (userService.isUserPresent(userId)) {
+            accountService.addAccount(account);
+            result = true;
+        }
+        return true;
+    }
+
+    public boolean changeAmount(Account account, int amount) {
+        boolean result = false;
+        if (accountService.isAccountPresent(account.getId())) {
+            account.setAmount(account.getAmount() + amount);
             result = true;
         }
         return result;
+    }
+
+    public Account getAccount(int accountId) {
+        return accountService.getAccount(accountId);
+    }
+
+    public int getNumberOfAccounts() {
+        return accountService.getNumberOfAccounts();
+    }
+
+    public AccountService getAccountService() {
+        return accountService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
     }
 }
